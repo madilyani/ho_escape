@@ -1,0 +1,791 @@
+.card {
+  position: relative;
+  padding-left: 370px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  &Image {
+    display: none;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+  &Slider {
+    width: 370px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 10px;
+    box-sizing: border-box;
+    &__title {
+      display: none;
+    }
+    &__main {
+      width: 100%;
+      position: absolute !important;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      .slick {
+        &-list {
+          height: 100%;
+        }
+        &-track {
+          height: 100%;
+        }
+        &-slide {
+          display: flex;
+          width: 100%;
+          height: 100%;
+          & > div {
+            width: 100%;
+            height: 100%;
+            display: flex;
+          }
+        }
+      }
+      &-item {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        img {
+          @include fullImage;
+        }
+      }
+    }
+    &__nav {
+      padding: 15px 4px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(23.25px);
+      border-radius: 10px;
+      width: 100%;
+      max-width: 280px;
+      margin: 0 auto !important;
+      .slick {
+        &-track {
+          display: flex !important;
+        }
+        &-slide {
+          padding: 0 4px;
+          display: flex;
+          & > div {
+            display: flex;
+            border: 2px solid transparent;
+            border-radius: 10px;
+            overflow: hidden;
+            @include transition;
+            box-sizing: border-box;
+          }
+          &.slick-current {
+            & > div {
+              border: 2px solid $white;
+            }
+          }
+        }
+      }
+      &-item {
+        cursor: pointer;
+      }
+      &-image {
+        position: relative;
+        padding-bottom: 100%;
+        img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include fullImage;
+        }
+      }
+    }
+  }
+  &__inner {
+    padding: 20px 0 20px 20px;
+    border: 1px solid $border-color;
+    border-left: 1px solid transparent;
+    border-radius: 0 10px 10px 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  &__head {
+    width: 100%;
+  }
+  &__foot {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 15px;
+    width: 100%;
+    padding-right: 20px;
+    box-sizing: border-box;
+    &-loc {
+      display: none;
+    }
+    &-btns {
+      text-align: center;
+      width: 186px;
+      .button {
+        padding: 18px 6px;
+        box-sizing: border-box;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+    }
+    &-note {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 20px;
+      text-transform: uppercase;
+      color: #ff0000;
+    }
+  }
+  &Info {
+    padding-bottom: 12px;
+    border-bottom: 1px solid $border-color;
+    width: 100%;
+    padding-right: 10px;
+    box-sizing: border-box;
+    ul {
+      li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 8px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #000000;
+        span {
+          color: $primary;
+          margin-left: 4px;
+        }
+        &:last-child {
+          margin-bottom: 0;
+        }
+        img {
+          width: 16px;
+          height: 16px;
+          min-width: 16px;
+          margin-right: 6px;
+        }
+      }
+    }
+    .rate {
+      margin-bottom: 10px;
+    }
+    &__location {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      svg {
+        width: 20px;
+        min-width: 20px;
+        height: 20px;
+        margin-right: 4px;
+        color: $primary;
+      }
+      span {
+        @include ellipsis(1);
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: $primary;
+      }
+    }
+    &__tag {
+      padding: 2px 30px;
+      box-sizing: border-box;
+      margin: 2px;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      text-transform: capitalize;
+      color: $primary;
+      border-radius: 50px;
+      background: rgba($color: $primary, $alpha: 0.28);
+      &s {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -2px -2px 12px -2px;
+      }
+    }
+    h5 {
+      margin-bottom: 5px;
+    }
+  }
+  .mobileList {
+    display: none;
+  }
+  &Cat {
+    margin: 0 4px;
+    &s {
+      margin: 0 -4px;
+      width: calc(100% + 8px);
+      display: flex;
+      padding: 10px 0;
+      position: relative;
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: 4px;
+        width: calc(100% - 8px);
+        content: "";
+        height: 1px;
+        background-color: $border-color;
+      }
+    }
+    width: 35px;
+    height: 35px;
+    box-sizing: border-box;
+    border: 1px solid $primary;
+    background: rgba($color: $primary, $alpha: 0.02);
+    border-radius: 3px;
+    display: flex;
+    cursor: pointer;
+    color: $primary;
+    box-sizing: border-box;
+    align-items: center;
+    position: relative;
+    @include transition;
+    justify-content: center;
+    &:hover {
+      box-shadow: inset 0px 0px 3px rgba(0, 0, 0, 0.75);
+    }
+    span {
+      left: 4px;
+      display: inline-block;
+      padding: 2px 5px;
+      border-radius: 4px;
+      background: #ffffff;
+      box-shadow: 0px 0px 20.3px rgba(44, 50, 104, 0.17);
+      border-radius: 20px;
+      text-align: center;
+      position: absolute;
+      top: calc(100% + 4px);
+      visibility: hidden;
+      @include transition;
+      font-size: 10px;
+      line-height: 12px;
+      white-space: nowrap;
+      flex-wrap: 600;
+      &::before {
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        bottom: 99%;
+        left: 10px;
+        background: $white;
+        content: "";
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+    }
+    &:hover {
+      span {
+        visibility: visible;
+      }
+    }
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &More {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 0;
+    border-bottom: 1px solid $border-color;
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      text-align: left;
+      font-family: "Poppins";
+      font-weight: 400;
+      width: 100%;
+      font-size: 20px;
+      line-height: 24px;
+      color: #000000;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 4px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      svg {
+        min-width: 16px;
+        width: 16px;
+        height: 16px;
+        margin-right: 4px;
+        margin-bottom: -2px;
+      }
+      strong {
+        font-weight: 700;
+      }
+    }
+  }
+  &Price {
+    color: $primary;
+    strong {
+      font-weight: 700;
+      font-size: 36px;
+      line-height: 40px;
+    }
+    span {
+      font-weight: 700;
+      font-size: 48px;
+      line-height: 1;
+    }
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 31px;
+  }
+  &Dis {
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 31px;
+    color: #faaf05;
+  }
+  &Desc {
+    display: none;
+  }
+}
+@mixin card-xxxlg-xxxxlg {
+  .card {
+    &__foot {
+      &-note {
+        font-size: 14px;
+        line-height: 20px;
+      }
+      &-btns {
+        width: 140px;
+      }
+    }
+    &More {
+      &__item {
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+    &Price {
+      font-size: 20px;
+      line-height: 26px;
+      span {
+        font-size: 34px;
+        line-height: 1;
+      }
+      strong {
+        font-size: 28px;
+        line-height: 32px;
+      }
+    }
+    &Dis {
+      font-size: 20px;
+      line-height: 26px;
+    }
+    &Info {
+      &__location {
+        svg {
+          width: 18px;
+          height: 18px;
+        }
+        span {
+          font-size: 16px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}
+@mixin card-xxlg-xxxlg {
+  .card {
+    padding-left: 300px;
+    &Slider {
+      width: 300px;
+    }
+  }
+}
+
+@mixin card-xlg-xxlg {
+  .card {
+    background: #ffffff;
+    box-shadow: 0px 0px 36.3px rgba(44, 50, 104, 0.17);
+    border-radius: 20px;
+    &__inner {
+      border: unset;
+    }
+  }
+}
+@mixin card-md-lg {
+  .card {
+    padding-left: 0;
+    overflow: unset;
+    position: relative;
+    &__head {
+      padding-left: 50%;
+      position: relative;
+      box-sizing: border-box;
+    }
+    &Image {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      justify-content: center;
+      width: calc(50% - 8px);
+      height: 100%;
+      &::before {
+        position: absolute;
+        content: "";
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        background: linear-gradient(
+          8.93deg,
+          #000000 7.13%,
+          rgba(0, 0, 0, 0) 80.44%
+        );
+        border-radius: 0px 0px 15px 15px;
+      }
+      img {
+        border-radius: 15px;
+        @include fullImage;
+      }
+      button {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        top: 10px;
+        background: transparent;
+        left: 10px;
+        width: 22px;
+        z-index: 1;
+        height: 22px;
+        svg {
+          width: 100%;
+          height: 100%;
+        }
+        &.active {
+          fill: red;
+          stroke: red;
+        }
+      }
+      span {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        width: 100%;
+        text-align: center;
+        z-index: 1;
+        font-family: "Poppins";
+        font-weight: 500;
+        font-size: 10px;
+        line-height: 20px;
+        text-align: center;
+        text-decoration-line: underline;
+        color: #ffffff;
+        display: block;
+      }
+    }
+    &Slider {
+      display: none;
+    }
+    &Mob {
+      position: absolute;
+      left: 0;
+      top: calc(100% + 30px);
+      width: 200%;
+      box-shadow: 0px 0px 150px #000000;
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 12px 0 12px 12px;
+      z-index: 3;
+
+      &::before {
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        bottom: 99%;
+        left: 22%;
+        background: $white;
+        content: "";
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+      }
+      .slick {
+        &-track {
+          display: flex !important;
+        }
+        &-slide {
+          padding: 0 5px;
+        }
+      }
+      &__slider {
+        &-image {
+          padding-bottom: 73%;
+          position: relative;
+          border-radius: 10px;
+          overflow: hidden;
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include fullImage;
+          }
+        }
+      }
+      &__title {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 20px;
+        font-weight: 700;
+        color: $black;
+        text-align: right;
+        padding-right: 12px;
+        display: flex;
+        justify-content: flex-end;
+        &-text {
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+@mixin card-xsm-sm {
+  .card {
+    margin-bottom: 16px;
+    .mobileList {
+      width: 100%;
+      box-sizing: border-box;
+      display: block;
+      padding-bottom: 5px;
+      margin-bottom: 5px;
+      position: relative;
+      padding-left: 5px;
+      &::before {
+        position: absolute;
+        bottom: 0;
+        left: -7px;
+        width: calc(100% + 14px);
+        content: "";
+        height: 1px;
+        background-color: $border-color;
+      }
+      li {
+        display: flex;
+        align-items: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #000000;
+        margin-bottom: 4px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        span {
+          color: $primary;
+        }
+        img {
+          width: 16px;
+          margin-right: 4px;
+        }
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &__inner {
+      padding: 7px 7px 16px 7px;
+    }
+    &__foot {
+      align-items: center;
+      box-sizing: border-box;
+      padding: 12px 1px 0 5px;
+      margin-top: 8px;
+      position: relative;
+      &::before {
+        position: absolute;
+        top: 0;
+        left: -7px;
+        width: calc(100% + 14px);
+        content: "";
+        height: 1px;
+        background-color: $border-color;
+      }
+      &-info {
+        width: calc(100% - 100px);
+      }
+      &-note {
+        display: none;
+      }
+      &-btns {
+        width: 92px;
+      }
+      .button {
+        width: unset;
+        display: inline-block;
+        font-size: 12px;
+        margin: 0;
+        width: 100%;
+        line-height: 20px;
+        padding: 14px 2px;
+        box-sizing: border-box;
+        height: 100%;
+      }
+    }
+    &Cats {
+      border: unset;
+      padding-left: 5px;
+      &::before {
+        display: none;
+      }
+    }
+    &Dis {
+      font-size: 20px;
+      line-height: 24px;
+    }
+    &Image {
+      &::before {
+        height: 35%;
+        opacity: 0.9;
+      }
+      span {
+        bottom: 3px;
+      }
+    }
+    &Price {
+      font-size: 16px;
+      margin-bottom: 0;
+      line-height: 18px;
+      span {
+        font-size: 36px;
+        line-height: 36px;
+      }
+      strong {
+        font-style: 20px;
+        line-height: 24px;
+        font-weight: 500;
+      }
+    }
+    &More {
+      padding: 0 0 0 5px;
+      border: unset;
+    }
+    &Info {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border: unset;
+      h5 {
+        order: 0;
+        font-size: 16px;
+        line-height: 20px;
+      }
+      &__location {
+        order: 1;
+        span {
+          font-size: 12px;
+          line-height: 14px;
+          color: #27529c;
+        }
+        svg {
+          width: 12px;
+          height: 12px;
+          min-width: 12px;
+          color: #27529c;
+        }
+      }
+      .rate {
+        &__range {
+          width: 70px;
+          height: 10px;
+          background-size: 70px;
+          &-progress {
+            height: 10px;
+            background-size: 70px;
+          }
+        }
+      }
+      &__tag {
+        font-size: 10px;
+        line-height: 11px;
+        padding: 4px 10px;
+        &s {
+          order: 3;
+          margin-bottom: 4px;
+        }
+      }
+      ul {
+        display: none;
+      }
+    }
+    &Desc {
+      order: 4;
+      display: block;
+      width: 100%;
+      position: relative;
+      &__btn {
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 20px;
+        text-decoration-line: underline;
+        text-transform: capitalize;
+        color: #000000;
+      }
+      &__body {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 20px);
+        width: 100%;
+        box-shadow: 0px 0px 150px #000000;
+        background: #ffffff;
+        border-radius: 10px;
+        z-index: 3;
+        padding: 5px 5px 5px 10px;
+        font-size: 12px;
+        line-height: 16px;
+        span {
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 20px;
+          border-radius: 50%;
+          background: $white;
+          height: 20px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: red;
+          cursor: pointer;
+
+          svg {
+            width: 8px;
+            height: 8px;
+            pointer-events: none;
+          }
+        }
+        &::before {
+          position: absolute;
+          width: 16px;
+          height: 15px;
+          bottom: 99%;
+          left: 16px;
+          background: $white;
+          content: "";
+          clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+      }
+    }
+  }
+}

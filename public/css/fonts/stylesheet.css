@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'Medium';
+    src: url('MediumRegular.woff2') format('woff2'),
+        url('MediumRegular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

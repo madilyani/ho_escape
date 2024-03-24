@@ -1,0 +1,347 @@
+// 1430px
+@include xxxlg-xxxxlg {
+  // base start
+  h4 {
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 36px;
+    &.uniq {
+      font-family: $balsamiq;
+    }
+  }
+  h5 {
+    line-height: 28px;
+    font-size: 20px;
+    &.big {
+      font-size: 22px;
+      line-height: 28px;
+    }
+  }
+  .button {
+    &.secondary {
+      font-size: 20px;
+      line-height: 28px;
+      padding: 15px;
+    }
+    &.reserve {
+      font-size: 16px;
+      line-height: 22px;
+    }
+    &.primary {
+      padding: 15px 30px;
+      font-size: 14px;
+    }
+  }
+  .auto__container {
+    max-width: 1200px;
+  }
+  .mapCard {
+    // margin: 6px;
+    // width: calc(33.3% - 12px);
+  }
+  @include header-xxxlg-xxxxlg;
+  @include nav-xxxlg-xxxxlg;
+  @include filter-xxxlg-xxxxlg;
+  @include note-xxxlg-xxxxlg;
+  // base end
+  // result page start
+  @include result-xxxlg-xxxxlg;
+  @include card-xxxlg-xxxxlg;
+
+  // result page end
+}
+// 1340px
+@include xxlg-xxxlg {
+  // base start
+  h5 {
+    line-height: 26px;
+    font-size: 16px;
+  }
+  .button {
+    &.secondary {
+      font-size: 16px;
+      line-height: 26px;
+    }
+  }
+  .auto__container {
+    max-width: 1040px;
+  }
+  .mapCard {
+    // width: calc(50% - 12px);
+    // max-width: unset;
+    // &:last-child {
+    //   display: none;
+    // }
+  }
+  @include note-xxlg-xxxlg;
+  @include card-xxlg-xxxlg;
+  //   base end
+  //   result start
+  @include result-xxlg-xxxlg;
+  @include filter-xxlg-xxxlg;
+  //   result end
+}
+// 1120px
+@include xlg-xxlg {
+  .main {
+    overflow: hidden;
+  }
+  @include header-xlg-xxlg;
+  //   base end
+  // result start
+  @include result-xlg-xxlg;
+  @include card-xlg-xxlg;
+  @include filter-xlg-xxlg;
+  // result end
+}
+// 1024px
+@include lg-xlg {
+  // base start
+  @include header-lg-xlg;
+  @include nav-lg-xlg;
+  @include footer-lg-xlg;
+  @include note-lg-xlg;
+  // base end
+}
+// 840px
+@include md-lg {
+  main {
+    padding-top: 90.18px;
+  }
+  .result {
+    &.noPt {
+      padding-top: 20px;
+    }
+  }
+  .search {
+    &Item {
+      width: 100% !important;
+      padding: 22px 20px 22px 60px !important;
+      border-bottom: 1px solid #e8e8e8;
+      border-radius: 0;
+      background-color: transparent !important;
+      &__title {
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        text-transform: capitalize;
+        color: #26529c;
+        margin-bottom: 5px;
+      }
+      &__input {
+        position: static;
+        &-icon {
+          position: absolute;
+          top: 50%;
+          left: 18px;
+          width: 25px;
+          height: 25px;
+          transform: translateY(-50%);
+          &.mobile {
+            display: flex;
+          }
+        }
+        input {
+          font-weight: 600;
+          font-size: 22px;
+          line-height: 28px;
+          text-transform: capitalize;
+          color: #000000;
+        }
+        button {
+          right: 15px;
+        }
+      }
+      &__popular {
+        width: 100%;
+      }
+      &__room {
+        left: unset;
+        right: 0;
+        &-spinbox-opr {
+          svg {
+            position: static;
+            transform: translate(0);
+            width: 14px;
+            height: 14px;
+          }
+        }
+      }
+    }
+    &Pop {
+      &Dates {
+        cursor: pointer;
+        width: 47%;
+        background-color: unset;
+        padding: 14px 10px 14px 60px;
+        position: relative;
+        margin: 0;
+        border-right: 1px solid #e8e8e8;
+        border-radius: 0;
+        box-sizing: border-box;
+        &__content {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+        }
+        svg {
+          width: 25px;
+          height: 25px;
+          position: absolute;
+          top: 50%;
+          left: 18px;
+          transform: translateY(-50%);
+        }
+      }
+      &Acts {
+        height: 100%;
+        background-color: unset;
+        border-radius: 0;
+        display: flex;
+        flex-direction: column;
+        & > svg {
+          width: 27px;
+          height: 20px;
+          position: absolute;
+          top: 50%;
+          left: 24px;
+          transform: translateY(-50%);
+        }
+        &__outer {
+          position: static;
+        }
+      }
+    }
+  }
+  // result start
+  @include card-md-lg;
+  @include header-md-lg;
+  @include calendar-md-lg;
+  @include note-md-lg;
+  @include placeholder;
+  // result end
+}
+// 700px
+@include sm-md {
+  .mapCard {
+    // width: 100%;
+    // max-width: 400px;
+    // margin: 0 auto;
+    // &:first-child {
+    //   display: none;
+    // }
+  }
+  // base start
+  @include footer-sm-md;
+  // base end
+}
+// 540px
+
+@include xsm-sm {
+  // base start
+  @include header-xsm-sm;
+  @include nav-xsm-sm;
+  @include footer-xsm-sm;
+  @include note-xsm-sm;
+  .auto__container {
+    padding: 0 20px;
+  }
+  h4 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+  .main {
+    padding-top: 70.38px;
+  }
+  .filter {
+    &Map {
+      width: calc(100% + 40px);
+      margin: 0 -20px;
+      &__image {
+        padding-bottom: 56%;
+        border-radius: 0;
+        a {
+          right: unset;
+          left: 50%;
+          bottom: 13px;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+  .search {
+    &Item {
+      padding: 14px 10px 14px 40px !important;
+      &__title {
+        font-size: 10px;
+        line-height: 18px;
+        margin-bottom: 0px;
+      }
+      &__input {
+        &-icon {
+          left: 10px;
+          width: 20px;
+          height: 20px;
+        }
+        input {
+          font-size: 16px;
+          line-height: 18px;
+        }
+      }
+      &__room {
+        width: 330px;
+      }
+    }
+    &Mob {
+      &__row {
+        h6 {
+          font-size: 10px;
+          line-height: 18px;
+          margin: 0;
+        }
+        input {
+          font-size: 12px;
+          line-height: 18px;
+        }
+        svg {
+          width: 20px;
+          height: 20px;
+          left: 10px;
+        }
+      }
+      &__room {
+        padding: 4px 10px 10px 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        svg {
+          width: 21px;
+          height: 15px;
+          left: 18px;
+        }
+      }
+    }
+    &Pop {
+      &Dates {
+        padding: 4px 10px 10px 40px;
+        &__content {
+          justify-content: center;
+        }
+      }
+      &Acts {
+        & > svg {
+          width: 21px;
+          height: 15px;
+          left: 18px;
+        }
+      }
+    }
+  }
+  // base end
+  @include filter-xsm-sm;
+  // result start
+  @include card-xsm-sm;
+  @include result-xsm-sm;
+
+  // result end
+}

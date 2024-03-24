@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+// 1-main components
+@import "./components/1-main/variables.scss";
+@import "./components/1-main/mixin.scss";
+@import "./components/1-main/nulifier.scss";
+@import "./components/datepicker/datepicker.scss";
+
+// 2-layout components
+@import "./components/2-layout/components.scss";
+@import "./components/2-layout/footer.scss";
+@import "./components/2-layout/header.scss";
+@import "./components/2-layout/nav.scss";
+@import "./components/2-layout/filter.scss";
+@import "./components/2-layout/card.scss";
+@import "./components/2-layout/search.scss";
+@import "./components/2-layout/calendar.scss";
+@import "./components/2-layout/placeholder.scss";
+
+// 3-pages components
+@import "./components/3-pages/result.scss";
+
+// responsive
+@import "./components/2-layout/responsive.scss";
+@import "./components/2-layout/slick.scss";
+@import "./components/2-layout/slick-theme.scss";
